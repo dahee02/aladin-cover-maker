@@ -11,6 +11,8 @@ from datetime import datetime
 
 warnings.filterwarnings('ignore')
 
+warnings.filterwarnings('ignore')
+
 # --- 설정값 ---
 TARGET_HEIGHT_MM = 30
 PAGE_WIDTH_MM = 210
