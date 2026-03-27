@@ -11,8 +11,6 @@ from datetime import datetime
 
 warnings.filterwarnings('ignore')
 
-warnings.filterwarnings('ignore')
-
 # --- 설정값 ---
 TARGET_HEIGHT_MM = 30
 PAGE_WIDTH_MM = 210
@@ -131,9 +129,8 @@ if st.button("🚀 PDF 만들기 시작!"):
             time_str = now.strftime("%Y%m%d_%H%M%S")
             filename = f"result_covers_{time_str}.pdf"
 
-            # 임시 파일로 저장 후 읽어오기
+            pdf_bytes = pdf.output(dest="S").encode("latin1")
 
-            # 핸드폰으로 바로 다운로드할 수 있는 마법의 버튼
             st.download_button(
                 label="📥 완성된 PDF 다운로드",
                 data=pdf_bytes,
@@ -141,7 +138,5 @@ if st.button("🚀 PDF 만들기 시작!"):
                 mime="application/pdf"
             )
 
-            # (선택) 다운로드 후 서버에 남은 임시 PDF 삭제
-            os.remove(filename)
         else:
             st.error("저장할 표지가 없습니다. 제목을 확인해주세요.")
