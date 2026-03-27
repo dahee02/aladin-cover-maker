@@ -1,13 +1,13 @@
 import streamlit as st
 import os
-import requests from bs4
-import BeautifulSoup from PIL
-import Image from io
-import BytesIO from fpdf
-import FPDF
+import requests
+from bs4 import BeautifulSoup
+from PIL import Image
+from io import BytesIO
+from fpdf import FPDF
 import urllib.parse
-import warnings from datetime
-import datetime
+import warnings
+from datetime import datetime
 
 warnings.filterwarnings('ignore')
 
